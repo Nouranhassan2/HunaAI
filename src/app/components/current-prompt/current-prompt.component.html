@@ -1,0 +1,44 @@
+<section>
+  <app-navbar></app-navbar>
+</section>
+<section class="my-3">
+  <div class="bg-main">
+    <div class="toolsLink d-flex pt-5 pe-5" dir="rtl" routerLink="/prompts">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
+        <path d="M1 17L9 9L1 1" stroke="#557481" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="me-2 text-muted fs-6">الرجوع لصفحة التلفينات</p>
+    </div>
+    <div class="d-flex justify-content-end me-5">
+      <h2 class="fs-4 mt-5 pt-5">تلقينات {{ selectedCategory }}</h2>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-5 w-90 mx-auto">
+    <div class="search-bar mt-3 mb-3 mx-auto w-100">
+      <input type="text" class="form-control" placeholder="ابحث عن التلقينات .." [(ngModel)]="searchText" (ngModelChange)="filterPrompts()" dir="rtl">
+    </div>
+    <div *ngFor="let prompt of filteredPrompts" class="col-md-12 d-flex justify-content-between" dir="rtl">
+      <div class="card h-100 text-end w-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="mt-1 mb-2">{{ prompt.QuestionText }}</h5>
+            <i (click)="togglePrompt(prompt.QuestionID)" class="bi bi-chevron-down"></i>
+          </div>
+          <div *ngIf="expandedStates.get(prompt.QuestionID)">
+            <div *ngIf="prompt.Prompt1">
+              <p id="textToCopy">{{ prompt.Prompt1 }}</p>
+              <i class="bi bi-copy " (click)="copyText()" style="cursor: pointer;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a href="https://wa.me/" target="_blank" class="whatsapp-button">
+  <img src="assets/whatsapp.png" alt="WhatsApp" class="">
+</a> 
+<section>
+  <app-footer></app-footer>
+</section>

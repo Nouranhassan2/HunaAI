@@ -1,0 +1,18 @@
+<div class="cards my-6">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let card of items">
+      <div class="card text-center">
+        <div class="card-header mt-2 d-flex text-center mx-auto">
+          <h5 class="card-title me-3">{{ card.title }}</h5>
+          <img [src]="card.icon" alt="">
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ card.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a [href]="getCardLinkUrl(card.link)" target="_blank" class="btn btn-bg mb-2">{{ card.buttonText }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

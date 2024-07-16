@@ -1,0 +1,42 @@
+<div class="app-container px-5 py-4">
+    <div class="ai-particles"></div>
+    <header>
+      <h1 class="mt-5 mb-2 pb-3">دروس الذكاء الاصطناعي المصورة</h1>
+    </header>
+  
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="ابحث عن درس..."
+        [formControl]="searchQuery"
+        dir="rtl"
+      />
+    </div>
+  
+    <div class="categories">
+      <button
+        *ngFor="let category of categories"
+        class="category-btn"
+        [class.active]="activeCategory === category"
+        (click)="fetchVideosByCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+  
+    <div class="video-grid ">
+      <div *ngFor="let video of videos" class="video-card">
+        <div class="video-thumbnail " [style.backgroundImage]="'url(' + video.thumbnail_url + ')'">
+          <div class="play-icon" (click)="openVideo(video.video_url)"></div>
+        </div>
+        <div class="video-info ">
+          <div class="video-title">{{ video.title }}</div>
+          <div class="video-meta">
+            <span>{{ video.duration }}</span>
+            <!-- <span>{{ video.likes }} إعجاب</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

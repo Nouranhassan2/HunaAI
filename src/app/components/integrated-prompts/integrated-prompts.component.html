@@ -1,0 +1,67 @@
+<section>
+  <app-navbar></app-navbar>
+</section>
+
+<section class="container py-4 ">
+  <div class="d-flex flex-column text-center">
+    <div class="text d-flex justify-content-center mt-6 d-flex flex-row-reverse">
+      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="64" viewBox="0 0 46 64" fill="none">
+      </svg>
+      <h1 class="mb-5 me-2">
+        تلقينات الذكاء الاصطناعى
+      </h1>
+    </div>
+    <p>قم بتجربة التلقينات الجاهزة لتوفير الجهد والوقت للتحدث مع الذكاء، واستخرج نتائج مطابقة لما تريد سريعًا</p>
+  </div>
+
+  <div class="row g-4 mt-4 w-90 mx-auto">
+    <div class="search-bar mt-3 mb-3 mx-auto w-100">
+      <input type="text" class="form-control" placeholder="ابحث بالكلمات او بالحروف..." [(ngModel)]="searchText" (input)="searchPrompts()" dir="rtl" (keyup)="searchPrompts()">
+    </div>
+    <div dir="rtl" class="my-4">
+      <label *ngFor="let category of categories" class="me-4 mt-3">
+        <input type="checkbox" [value]="category" (change)="onCategoryChange($event)">
+        {{ category }}
+      </label>
+    </div>
+  
+    <button (click)="applyCategoryFilter()" class="btn btn-success">عرض الفئات المختارة</button>
+
+    <div *ngFor="let prompt of filteredPrompts; trackBy: trackById" class="col-md-12 d-flex justify-content-between" dir="rtl">
+      <div class="card h-100 text-end w-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="mt-1 mb-2">{{ prompt.QuestionText }}</h5>
+            <i (click)="togglePrompt(prompt.QuestionID)" class="bi bi-chevron-down"></i>
+          </div>
+          <div *ngIf="expandedStates.get(prompt.QuestionID)">
+            <div *ngIf="prompt.Prompts">
+
+              <p id="textToCopy">{{ prompt.Prompts }}</p>
+              <i class="bi bi-copy copy ms-3" (click)="copyText()"></i>
+              <!-- <button (click)="shareOnWhatsApp(prompt)" class="btn btn-success">
+                <i class="bi bi-whatsapp"></i>
+              </button> -->
+            </div>
+            <div *ngIf="prompt.Prompt1">
+
+              <p id="textToCopy">{{ prompt.Prompt1 }}</p>
+              <i class="bi bi-copy copy ms-3" (click)="copyText()"></i>
+              <!-- <button (click)="shareOnWhatsApp(prompt)" class="btn btn-success">
+                <i class="bi bi-whatsapp"></i>
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a href="https://wa.me/" target="_blank" class="whatsapp-button">
+  <img src="assets/whatsapp.png" alt="WhatsApp" class="">
+</a> 
+<section>
+  <app-footer></app-footer>
+</section>
+
+

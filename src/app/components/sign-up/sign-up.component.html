@@ -1,0 +1,104 @@
+<section>
+  <app-navbar></app-navbar>
+</section>
+
+<section class="signUp mt-5">
+  <div class="container">
+    <h1 class="text-center">إنشاء حساب</h1>
+    <form (ngSubmit)="handleSignUp()" [formGroup]="SignupForm" class="form-signup">
+
+      <div class="form-group">
+        <label for="Username" class="custom-label">اسم المستخدم <span class="required">*</span></label>
+        <input type="text" class="form-control custom-input" id="Username" formControlName="username" placeholder="اسم المستخدم" />
+        <div *ngIf="SignupForm.get('username')?.errors && (SignupForm.get('username')?.touched || clicked)" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('username')?.getError('required')">name is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('username')?.getError('minlength')">minLength is 3 character</p>
+          <p class="m-0" *ngIf="SignupForm.get('username')?.getError('maxlength')">maxLength is 10 character</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="FirstName" class="custom-label">الاسم الأول <span class="required">*</span></label>
+        <input type="text" class="form-control custom-input" id="FirstName" formControlName="firstName" placeholder="الاسم الأول" />
+        <div *ngIf="SignupForm.get('firstName')?.errors && (SignupForm.get('firstName')?.touched || clicked)" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('firstName')?.getError('required')">name is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('firstName')?.getError('minlength')">minLength is 3 character</p>
+          <p class="m-0" *ngIf="SignupForm.get('firstName')?.getError('maxlength')">maxLength is 10 character</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="LastName" class="custom-label">الاسم الثاني <span class="required">*</span></label>
+        <input type="text" class="form-control custom-input" id="LastName" formControlName="lastName" placeholder="الاسم الثاني" />
+        <div *ngIf="SignupForm.get('lastName')?.errors && (SignupForm.get('lastName')?.touched || clicked)" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('lastName')?.getError('required')">name is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('lastName')?.getError('minlength')">minLength is 3 character</p>
+          <p class="m-0" *ngIf="SignupForm.get('lastName')?.getError('maxlength')">maxLength is 10 character</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="PhoneNumber" class="custom-label">رقم الجوال <span class="required">*</span></label>
+        <input type="tel" class="form-control custom-input" id="PhoneNumber" formControlName="phoneNumber" placeholder="رقم الجوال" />
+        <div *ngIf="(SignupForm.get('phoneNumber')?.touched || clicked) && SignupForm.get('phoneNumber')?.errors" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('phoneNumber')?.getError('required')">phoneNumber is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('phoneNumber')?.getError('pattern')">PhoneNumber is invalid</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="custom-label">البريد الإلكتروني <span class="required">*</span></label>
+        <input type="email" class="form-control custom-input" id="email" formControlName="email" placeholder="البريد الإلكتروني" />
+        <div *ngIf="SignupForm.get('email')?.errors && (SignupForm.get('email')?.touched || clicked)" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('email')?.getError('required')">email is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('email')?.getError('email')">email is invalid</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="custom-label">كلمة المرور <span class="required">*</span></label>
+        <div class="input-group">
+          <input [type]="showPassword ? 'text' : 'password'" class="form-control custom-input" id="password" formControlName="password" placeholder="كلمة المرور" />
+          <div class="input-group-append" (click)="togglePasswordVisibility()">
+            <span class="input-group-text"><i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i></span>
+          </div>
+        </div>
+        <div *ngIf="(SignupForm.get('password')?.touched || clicked) && SignupForm.get('password')?.errors" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('password')?.getError('required')">password is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('password')?.getError('pattern')">password is invalid</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword" class="custom-label">تأكيد كلمة المرور <span class="required">*</span></label>
+        <div class="input-group">
+          <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control custom-input" id="confirmPassword" formControlName="confirmPassword" placeholder="تأكيد كلمة المرور" />
+          <div class="input-group-append" (click)="toggleConfirmPasswordVisibility()">
+            <span class="input-group-text"><i [ngClass]="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i></span>
+          </div>
+        </div>
+        <div *ngIf="(SignupForm.get('confirmPassword')?.touched || clicked) && SignupForm.get('confirmPassword')?.errors" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="SignupForm.get('confirmPassword')?.getError('required')">confirmation is required</p>
+          <p class="m-0" *ngIf="SignupForm.get('confirmPassword')?.getError('pattern')">confirmation is invalid</p>
+          <p class="m-0" *ngIf="SignupForm.get('confirmPassword')?.getError('mismatch')">passwords do not match</p>
+        </div>
+      </div>
+
+      <button class="btn btn-bg mt-4 w-100 btn-bg">إنشاء الحساب</button>
+    </form>
+
+    <div class="social-signup mt-3 text-center">
+      <p>أنشئ حسابك عن طريق</p>
+      <button class="btn btn-outline-secondary w-100">
+        <i class="fab fa-google"></i> Google
+      </button>
+    </div>
+
+    <div class="text-center mt-3">
+      <p>هل لديك حساب؟ <a href="#" class="main-color">تسجيل الدخول</a></p>
+    </div>
+  </div>
+</section>
+<section>
+  <app-footer></app-footer>
+</section>

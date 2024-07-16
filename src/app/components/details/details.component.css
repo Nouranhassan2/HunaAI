@@ -1,0 +1,45 @@
+.btn-main{
+    --bs-btn-color: #000;
+    font-weight: bold;
+    background: var(--Primary, #F3DAA2);
+
+    --bs-btn-border-color:none;
+   /* box-shadow: 0px 2px 5px 1.5px rgba(0, 0, 0, 0.25);; */
+    width: fit-content;
+    margin-bottom: 1rem;
+    --bs-btn-hover-color: var(--black, #0A0A0A);
+    
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #000;
+    border-radius: 15px;
+    padding: 8px 24px;
+    border-radius: 12px;
+}
+.toolsLink{
+    cursor: pointer;
+}
+.color-red{
+    color: #CE1312;
+}
+.bg-main{
+    background-color:  #D9D9D9;;
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-color: #fff; /* WhatsApp green color */
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it stays on top */
+  }
+  
+  .whatsapp-button img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+  }

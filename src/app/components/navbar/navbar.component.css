@@ -1,0 +1,171 @@
+.nav-bar{
+   font-family: "Noto Kufi Arabic", sans-serif;
+    ;
+    font-weight: 600;
+    font-size: 16px;
+    
+
+}
+.btn-bg{
+--bs-btn-color: black;
+--bs-btn-bg: #f3daa2;
+--bs-btn-border-color: none;
+--bs-btn-hover-color: black;
+--bs-btn-hover-bg: #f1cc7b;
+font-weight: bold;
+padding: 16px 20px;
+border-radius: 16px;
+font-size: 14px;
+
+}
+.logo{
+    width: 180px;
+    /* height: 56px; */
+    
+} 
+@media (max-width:991px) {
+    .navbar-nav{
+        background-color: #fff;
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 5px;
+    }
+    .nav-link{
+        padding: 5px 35px;
+        font-size: 16px;
+    }
+    
+}
+@media (max-width: 991px){
+.navbar-nav[_ngcontent-ng-c2540533267] {
+  background-color: #fff;
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 5px;
+  align-items: end;
+}
+}
+@media (max-width: 472px){
+  .navbar-nav[_ngcontent-ng-c2540533267] {
+    background-color: #fff;
+    width: 88%;
+    border-radius: 15px;
+    margin-top: 5px;
+    align-items: end;
+  }
+  }
+
+  .Btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 13.5px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #CFB98D, #F3DAA2, #DDCFB2, #B8D8DD);
+    background-size: 1000% 1000%;
+    animation: gradient 5s ease infinite;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.247);
+    transition-duration: .1s;
+}
+
+/* Button's gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* Effect on Hover*/
+.Btn::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    left: -70px;
+    top: 0;
+    background-color: rgba(214, 199, 255, 0.329);
+    filter: blur(10px);
+    transition-duration: .3s;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.Btn:hover::before {
+    transform: translateX(250px);
+    transition-duration: .3s;
+}
+
+/* Effect on click */
+.Btn:active {
+    transform: translate(2px, 2px);
+    transition-duration: .1s;
+}
+/*   */
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8c9da2; 
+    padding: 10px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    max-height: auto;
+    min-height: 4rem;
+  }
+  
+  nav ul {
+    list-style: none;
+      padding: 0;
+      display: flex;
+  }
+  
+  
+  li {
+    margin: 0 10px; 
+  }
+  
+  nav li:last-child {
+    border-right: none;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: white; 
+    color: #F8991F;
+  }
+  
+  .icon {
+    display: none;
+  } 
+  
+  
+  
+  /* Hide the hamburger menu icon on larger screens */
+ /* navbar.component.css */

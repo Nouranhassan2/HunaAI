@@ -1,0 +1,47 @@
+.w-70{
+    width: 70%;
+}
+.about-us{
+text-align: center;
+}
+.form-control {
+    background: var(--50, #EFF6FF);
+}
+.text-color{
+    background: var(--Secondary, #557481);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.close-spacing{
+    width: 35%;
+    margin-bottom: 30px;
+}
+
+.about-us .col-lg-6 {
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-us p {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust responsiveness */
+@media (max-width: 991px) {
+    .close-spacing {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

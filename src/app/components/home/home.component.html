@@ -1,0 +1,61 @@
+<section>
+  <app-navbar></app-navbar>
+</section>
+<section class="container py-4 home">
+  <div class="text d-flex align-items-center flex-column my-5 " dir="rtl">
+    <div class="text-h2 d-flex justify-content-center ">
+      <img src="assets/card1.svg" alt="" class="ms-2 " style="width: 56px;height:56px ;">
+      <h2>أدوات الذكاء الاصطناعي</h2>
+    </div>
+
+    <h4 class="mt-3 text-muted">وفرنا لك أكثر من أداة في المجالات المختلفة</h4>
+  </div>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-3 mt-0 mb-4">
+      <div class="filter-section text-end">
+        <select #filterSelect class="btn btn-second" (change)="selectCategory(filterSelect.value)" dir="rtl">
+          <option value="" disabled selected>تصنيف حسب</option>
+          <option value="التصميم">التصميم</option>
+          <option value="البرمجة">البرمجة</option>
+          <option value="المحتوى">المحتوى</option>
+          <option value="فيديو">فيديو</option>
+          <option value="أوديو">أوديو</option>
+          <option value="الاختبار">الاختبار</option>
+          <option value="مولد مطالبات"> مولد مطالبات</option>
+          <option value="مكتبات الذكاء الاصطناعى">مكتبات الذكاء الاصطناعى</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-9 mt-0 search-input-container">
+      <div class="input-group">
+        <input type="search" class="form-control mb-4" [(ngModel)]="searchQuery" (keyup)="onSearch()" placeholder="ابحث عن أداة .." dir="rtl">
+      </div>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div *ngFor="let item of toolList" class="col-lg-4">
+      <div class="card text-dark w-100">
+        <div class="d-flex justify-content-between flex-row-reverse">
+          <div class="text w-100 ms-2" dir="rtl">
+            <h4>{{ item.Name }}</h4>
+            <p class="overflow-hidden" style="height: 77px; width:100%;">{{ item?.Details }}</p>
+          </div>
+          <div class="image w-100" style="width: 120px; height: 96px;">
+            <img [src]="item.ImageURL" class="w-100 h-100" alt="">
+          </div>
+        </div>
+        <div class="Button-center">
+          <a [href]="getToolDetailsUrl(item.ToolID)" target="_blank" class="btn btn-tools ms-0">استكشف الأداة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/" target="_blank" class="whatsapp-button">
+  <img src="assets/whatsapp.png" alt="WhatsApp" class="">
+</a>
+<section>
+  <app-footer></app-footer>
+</section>

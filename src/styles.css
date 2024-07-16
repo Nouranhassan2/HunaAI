@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+/* In styles.css or styles.scss */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+  
+body{
+    font-family: "Noto Kufi Arabic", sans-serif;
+
+}
+.w-90{
+    width: 90%;
+}
+.my-6 {
+    margin-top: 5.5rem !important;
+    margin-bottom: 5.5rem !important;
+  }
+  
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.btn-bg{
+--bs-btn-color: black;
+--bs-btn-bg: #f3daa2;
+--bs-btn-border-color: none;
+--bs-btn-hover-color: black;
+--bs-btn-hover-bg: #f1cc7b;;
+font-weight: bold;
+padding: 14px 18px;
+border-radius: 16px;
+font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    background: var(--50, #EFF6FF);
+}
+
+a {
+    text-decoration: none;
+}
+
+/*About Us Section*/
+.form-control {
+    background: var(--50, #EFF6FF);
+}
+.text-color{
+    background-color: #F3DAA2;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.close-spacing{
+    width: 35%;
+    margin-bottom: 30px;
+}
+
+.about-us .col-lg-6 {
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-us p {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust responsiveness */
+@media (max-width: 991px) {
+    .close-spacing {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/*Contact-us section*/
+.logo-img {
+    width: 210px;
+    height: 111px;
+    flex-shrink: 0;
+}
+
+.btn-send {
+    background-color: #F3DAA2;
+}
+
+.btn-send:hover {
+    background-color: #f1cc7b;
+}
+
+.contact-icons i {
+    background-color: #557481;
+}
+
+.p-facebook {
+    padding-right: 13px;
+    padding-left: 13px;
+}
+
+.lg-font {
+    color: #557481;
+}
+
+.form-control {
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    opacity: 0.6;
+}
+
+.form-control:focus {
+    background-color: var(--bg-50, #EFF6FF);
+}
+
+.custom-class1[_ngcontent-ng-c517440552] {
+    margin-right: 8px;
+}
+.contact-icons {
+    margin-top: 5px; 
+    margin-bottom: 20px;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+
+
+
+/*Footer*/

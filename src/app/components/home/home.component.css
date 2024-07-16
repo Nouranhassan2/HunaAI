@@ -1,0 +1,120 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.card {
+  cursor: pointer;
+  width: 376px;
+  height: 224px;
+  border-radius: 24px;
+  background-color:  var(--white, #FAFAFA);
+  padding: 16px 32px;
+
+}
+.text-h2{
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.btn-second {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--white, #FAFAFA);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  --bs-btn-border-color: none;
+  --bs-btn-hover-color:none;
+  --bs-btn-hover-bg: var(--white, #FAFAFA);
+
+  --bs-btn-hover-border-color: none;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 10px 11px;
+  padding: 5px 5px;
+  width: 100%;
+    }
+    .form-control {
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      display: block;
+      width: 100%;
+      padding: 0.7rem 0.75rem;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+      background-color:var(--white, #FAFAFA);;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      appearance: none;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .form-cn:focus{
+    border: none;
+  }
+.text{
+
+  display: flex;
+  flex-direction: column;
+}
+.btn-tools {
+  --bs-btn-color: #000;
+  font-weight: bold;
+  /* --bs-btn-bg: #fff; */
+  background: var(--Primary, #F3DAA2);
+  --bs-btn-border-color:none;
+ box-shadow: 0px 2px 5px 1.5px rgba(0, 0, 0, 0.25);;
+  width: fit-content;
+  margin-bottom: 1rem;
+  --bs-btn-hover-color: var(--black, #0A0A0A);
+  
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #000;
+  border-radius: 12px;
+  padding: 12px 10px;
+  width: 50%;
+  /* --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545; */
+}
+@media (max-width:771px) {
+  .btn-tools {
+     width: 90%;
+     font-size: 16px;
+     margin-inline:auto;
+     
+  }
+  .Button-center{
+    text-align: center;
+
+  }
+  
+}
+.image img {
+  max-width: 120px;
+  height: auto; /* Adjust height as necessary */
+  position: relative;
+  left: -10%; /* Adjust this value to center the image if it's zoomed in */
+}
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  background-color: #fff; /* WhatsApp green color */
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.whatsapp-button img {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+}
