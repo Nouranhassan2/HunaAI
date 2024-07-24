@@ -59,6 +59,8 @@ import { VideosComponent } from './components/videos/videos.component';
 import { StayTunedComponent } from './components/stay-tuned/stay-tuned.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DetailsComponent } from './components/details/details.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', component: ShowCaseComponent },
@@ -73,6 +75,8 @@ const routes: Routes = [
   { path: 'login', component: SignInComponent },
   { path: 'videos', component: VideosComponent },
   { path: 'staytuned', component: StayTunedComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password/:token', component: ResetPasswordComponent },
   { path: '**', component: NotfoundComponent },
 ];
 

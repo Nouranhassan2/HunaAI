@@ -1,140 +1,50 @@
-<!-- <div class="container">
-    <h1>Login </h1>
-    <form (ngSubmit)="handleLogin()" [formGroup]="LoginForm">
-  
-  
-  
-        <label for="email">email</label>
-        <input type="email" class="form-control" id="email" formControlName="email" />
-    
-        <div
-          *ngIf="LoginForm.get('email')?.errors && (LoginForm.get('email')?.touched || clicked)"
-          class="alert alert-danger mt-2"
-        >
-          <p class="m-0" *ngIf="LoginForm.get('email')?.getError('required')">
-            name is required
-          </p>
-          <p class="m-0" *ngIf="LoginForm.get('email')?.getError('email')">
-            write valid email
-          </p>
-        
+<section>
+  <app-navbar></app-navbar>
+</section>
+
+<section class="Login mt-5">
+  <div class="container">
+    <h1 class="text-center">تسجيل الدخول </h1>
+    <form (ngSubmit)="handleLogin()" [formGroup]="LoginForm" class="form-signup">
+
+      <div class="form-group" dir="rtl">
+        <label for="email">البريد الألكترونى</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="البريد الألكترونى" />
+
+        <div *ngIf="LoginForm.get('email')?.errors && (LoginForm.get('email')?.touched || clicked)" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="LoginForm.get('email')?.getError('required')">name is required</p>
+          <p class="m-0" *ngIf="LoginForm.get('email')?.getError('email')">write valid email</p>
         </div>
-    
-  
-      <label for="password">password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        formControlName="password"
-      />
-      <div
-        *ngIf="
-         ( LoginForm.get('password')?.touched ||clicked)&&
-          LoginForm.get('password')?.errors
-        "
-        class="alert alert-danger mt-2"
-      >
-        <p class="m-0" *ngIf="LoginForm.get('password')?.getError('required')">
-          password is required
-        </p>
-        <p class="m-0" *ngIf="LoginForm.get('password')?.getError('pattern')">
-          password is invalid
-        </p>
       </div>
-  
-  
-        
-  
-  
-  
-  
-      <button class="btn btn-success mt-2" [disabled]="!LoginForm.valid" >Login</button>
-      
-      <button  class="btn btn-danger"><a routerLink="/forgot-password">Forgot Password</a></button>
 
-    </form>
-  </div> -->
-
-
-  <section>
-    <app-navbar></app-navbar>
-  </section>
-  
-  <section class="Login mt-5">
-    <div class="container">
-      <h1 class="text-center">تسجيل الدخول </h1>
-      <form (ngSubmit)="handleLogin()" [formGroup]="LoginForm" class="form-signup">
-  
-        <div class="form-group">
-            <label for="email">البريد الألكترونى</label>
-            <input type="email" class="form-control" id="email" formControlName="email" placeholder="البريد الألكترونى" />
-        
-            <div
-              *ngIf="LoginForm.get('email')?.errors && (LoginForm.get('email')?.touched || clicked)"
-              class="alert alert-danger mt-2"
-            >
-              <p class="m-0" *ngIf="LoginForm.get('email')?.getError('required')">
-                name is required
-              </p>
-              <p class="m-0" *ngIf="LoginForm.get('email')?.getError('email')">
-                write valid email
-              </p>
-            
-            </div>
+      <div class="form-group my-3" dir="rtl">
+        <label for="password">كلمة المرور</label>
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="كلمة المرور" />
+        <div *ngIf="(LoginForm.get('password')?.touched || clicked) && LoginForm.get('password')?.errors" class="alert alert-danger mt-2">
+          <p class="m-0" *ngIf="LoginForm.get('password')?.getError('required')">password is required</p>
+          <p class="m-0" *ngIf="LoginForm.get('password')?.getError('pattern')">password is invalid</p>
         </div>
-  
-        <div class="form-group my-3" >
-      <label for="password">كلمة المرور</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        formControlName="password"
-        placeholder=">كلمة المرور"
-      />
-      <div
-        *ngIf="
-         ( LoginForm.get('password')?.touched ||clicked)&&
-          LoginForm.get('password')?.errors
-        "
-        class="alert alert-danger mt-2"
-      >
-        <p class="m-0" *ngIf="LoginForm.get('password')?.getError('required')">
-          password is required
-        </p>
-        <p class="m-0" *ngIf="LoginForm.get('password')?.getError('pattern')">
-          password is invalid
-        </p>
       </div>
-  
-        </div>
-  
-      
-        <!-- <button class="btn btn-success mt-2" [disabled]="!LoginForm.valid" >Login</button> -->
-      
 
-        <div  dir="rtl">
-            <a class="forgotpassword mt-2 text-muted" routerLink="/forgot-password">نسيت كلمة المرور؟ </a>
-        </div>
-  
-        <!-- <button class="btn btn-bg mt-4 w-100 btn-bg">إنشاء الحساب</button> -->
-      </form>
-  
+      <div dir="rtl">
+        <a class="forgotpassword mt-2 text-muted" routerLink="/forgot-password">نسيت كلمة المرور؟ </a>
+      </div>
+
       <div class="social-signup mt-3 text-center">
         <p>أو سجل عن طريق</p>
         <button class="btn btn-outline-secondary w-100">
           <i class="fab fa-google"></i> Google
         </button>
       </div>
-        
+
       <div class="text-center mt-3">
-        <button class="btn btn-bg my-2 mx-auto text-center"  [disabled]="!LoginForm.valid" >تسجيل الدخول
-        </button>
-        <p>لا تملك حساب ؟  <a href="#" class="main-color">أنشاء حساب  </a></p>
+        <button class="btn btn-main my-2 mx-auto text-center" [disabled]="!LoginForm.valid">تسجيل الدخول</button>
+        <p>لا تملك حساب ؟ <a href="#" class="main-color">أنشاء حساب </a></p>
       </div>
-    </div>
-  </section>
-  <section>
-    <app-footer></app-footer>
-  </section>
+    </form>
+  </div>
+</section>
+
+<section>
+  <app-footer></app-footer>
+</section>

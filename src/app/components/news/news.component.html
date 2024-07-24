@@ -14,7 +14,7 @@
     <div class="col-md-8 d-flex flex-column justify-content-between">
       <div>
         <h2 class="mb-3">
-          <a [routerLink]="['/newsDetails', item.NewsID]" class="text-decoration-none text-dark">
+          <a [href]="getNewsDetailsUrl(item.NewsID)" target="_blank" class="text-decoration-none text-dark">
             {{ item.NewsTitle }}
           </a>
         </h2>

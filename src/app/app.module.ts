@@ -26,8 +26,10 @@ import { IntegratedPromptsComponent } from './components/integrated-prompts/inte
 import { VideosComponent } from './components/videos/videos.component';
 import { StayTunedComponent } from './components/stay-tuned/stay-tuned.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailsComponent, NotfoundComponent, NavbarComponent, ShowCaseComponent, HeroComponent, FeaturesComponent, AboutUsComponent, FooterComponent, PromptsComponent, CurrentPromptComponent, SafeURLPipe, SignUpComponent, NewsComponent, NewsDetailsComponent, IntegratedPromptsComponent, VideosComponent, StayTunedComponent, SignInComponent],
+  declarations: [AppComponent, HomeComponent, DetailsComponent, NotfoundComponent, NavbarComponent, ShowCaseComponent, HeroComponent, FeaturesComponent, AboutUsComponent, FooterComponent, PromptsComponent, CurrentPromptComponent, SafeURLPipe, SignUpComponent, NewsComponent, NewsDetailsComponent, IntegratedPromptsComponent, VideosComponent, StayTunedComponent, SignInComponent, ForgotPasswordComponent, ResetPasswordComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule,ReactiveFormsModule,FormsModule
   ],
   providers: [],
